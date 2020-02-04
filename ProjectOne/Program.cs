@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjectOne.Memento;
 
 namespace ProjectOne
 {
@@ -6,7 +7,9 @@ namespace ProjectOne
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            new MomentoMain();
         }
+
+
     }
 }
