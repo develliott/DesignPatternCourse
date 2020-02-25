@@ -1,5 +1,4 @@
-﻿using System;
-using ProjectOne.Memento;
+﻿using ProjectOne.State_Pattern;
 
 namespace ProjectOne
 {
@@ -7,7 +6,7 @@ namespace ProjectOne
     {
         static void Main(string[] args)
         {
-            new MementoMain();
+            new StatePatternMain();
         }
 
 

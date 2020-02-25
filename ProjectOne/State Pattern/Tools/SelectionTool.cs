@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProjectOne.State_Pattern.Tools
 {
-    class SelectionTool : IPerformToolAction
+    internal class SelectionTool : IPerformToolAction
     {
         public void PerformMouseUpAction()
         {
