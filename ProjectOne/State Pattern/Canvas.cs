@@ -1,43 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ProjectOne.State_Pattern.Tools;
 
 namespace ProjectOne.State_Pattern
 {
     public class Canvas
     {
-        private ToolType CurrentTool { get; set; }
+        private IPerformToolAction CurrentTool { get; set; }
 
         public void MouseDown()
         {
-            if (CurrentTool == ToolType.Selection)
-            {
-                Console.WriteLine("Selection Icon");
-            }
-            else if (CurrentTool == ToolType.Brush)
-            {
-                Console.WriteLine("Brush Icon");
-            }
-            else if (CurrentTool == ToolType.Eraser)
-            {
-                Console.WriteLine("Eraser Icon");
-            }
+            CurrentTool.PerformMouseDownAction();
         }
 
         public void MouseUp()
         {
-            if (CurrentTool == ToolType.Selection)
-            {
-                Console.WriteLine("Draw dashed rectangle");
-            }
-            else if (CurrentTool == ToolType.Brush)
-            {
-                Console.WriteLine("Draw Line");
-            }
-            else if (CurrentTool == ToolType.Eraser)
-            {
-                Console.WriteLine("Erase Something");
-            }
+            CurrentTool.PerformMouseUpAction();
         }
     }
 }
