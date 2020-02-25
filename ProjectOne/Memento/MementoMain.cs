@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ProjectOne.Memento
 {
-    public class MomentoMain
+    public class MementoMain
     {
-        public MomentoMain()
+        public MementoMain()
         {
             var editor = new Editor();
             var history = new History();

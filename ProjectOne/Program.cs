@@ -7,7 +7,7 @@ namespace ProjectOne
     {
         static void Main(string[] args)
         {
-            new MomentoMain();
+            new MementoMain();
         }
 
 
