@@ -6,23 +6,25 @@ namespace ProjectOne.IteratorPattern
 {
     public class BrowseHistory
     {
-        private List<string> _urls = new List<string>();
+        private string[] _urls = new string[10];
+        private int _currentIndex;
 
         public IIterator<string> CreateIterator()
         {
-            return  new ListIterator(this);
+            return new ListIterator(this);
         }
 
         public void Push(string url)
         {
-            _urls.Add(url);
+            _urls[_currentIndex] = url;
+            _currentIndex++;
         }
 
         public string Pop()
         {
-            var lastIndex = _urls.Count - 1;
-            var lastUrl = _urls[lastIndex];
-            _urls.Remove(lastUrl);
+            var lastUrl = _urls[_currentIndex];
+            _urls[_currentIndex] = null;
+            _currentIndex--;
             return lastUrl;
         }
 
@@ -38,7 +40,7 @@ namespace ProjectOne.IteratorPattern
 
             public bool HasNext()
             {
-                return (_index < _history._urls.Count);
+                return (_index < _history._urls.Length);
             }
 
             public string Current()
