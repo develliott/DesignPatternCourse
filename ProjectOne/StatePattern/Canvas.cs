@@ -1,6 +1,6 @@
-﻿using ProjectOne.State_Pattern.Tools;
+﻿using ProjectOne.StatePattern.Tools;
 
-namespace ProjectOne.State_Pattern
+namespace ProjectOne.StatePattern
 {
     public class Canvas
     {

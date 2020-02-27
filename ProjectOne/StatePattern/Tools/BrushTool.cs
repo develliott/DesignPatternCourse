@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectOne.State_Pattern.Tools
+namespace ProjectOne.StatePattern.Tools
 {
     public class BrushTool : IPerformToolAction
     {

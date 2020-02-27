@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectOne.State_Pattern.Tools
+namespace ProjectOne.StatePattern.Tools
 {
     internal class SelectionTool : IPerformToolAction
     {

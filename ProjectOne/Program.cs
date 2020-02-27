@@ -1,4 +1,4 @@
-﻿using ProjectOne.State_Pattern;
+﻿using ProjectOne.StatePattern;
 
 namespace ProjectOne
 {
