@@ -4,7 +4,13 @@ using System.Text;
 
 namespace ProjectOne.MediatorPattern.UI
 {
-    class UIControl
+    public class UIControl
     {
+        protected DialogBox _owner;
+
+        public UIControl(DialogBox owner)
+        {
+            this._owner = owner;
+        }
     }
 }

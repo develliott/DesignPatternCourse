@@ -1,4 +1,4 @@
-﻿using ProjectOne.ObserverPattern;
+﻿using ProjectOne.MediatorPattern;
 
 namespace ProjectOne
 {
@@ -6,7 +6,7 @@ namespace ProjectOne
     {
         static void Main(string[] args)
         {
-            new ObserverPatternMain();
+            new MediatorPatternMain();
         }
     }
 }

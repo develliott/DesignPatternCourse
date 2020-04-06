@@ -4,8 +4,22 @@ using System.Text;
 
 namespace ProjectOne.MediatorPattern.UI
 {
-    class TextBox : UIControl
+    public class TextBox : UIControl
     {
-        public string Content { get; set; }
+        private string _content;
+
+        public string Content
+        {
+            get => _content;
+            set
+            {
+                _content = value;
+                _owner.Changed(this);
+            }
+        }
+
+        public TextBox(DialogBox owner) : base(owner)
+        {
+        }
     }
 }

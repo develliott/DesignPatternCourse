@@ -4,9 +4,22 @@ using System.Text;
 
 namespace ProjectOne.MediatorPattern.UI
 {
-    class ListBox : UIControl
+    public class ListBox : UIControl
     {
-        public string Selection { get; set; }
+        private string _selection;
 
+        public string Selection
+        {
+            get => _selection;
+            set
+            {
+                _selection = value;
+                _owner.Changed(this);
+            }
+        }
+
+        public ListBox(DialogBox owner) : base(owner)
+        {
+        }
     }
 }
