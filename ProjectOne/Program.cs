@@ -1,5 +1,4 @@
-﻿using ProjectOne.IteratorPattern;
-using ProjectOne.StatePattern;
+﻿using ProjectOne.CommandPattern;
 
 namespace ProjectOne
 {
@@ -7,9 +6,7 @@ namespace ProjectOne
     {
         static void Main(string[] args)
         {
-            new IteratorPatternMain();
+            new CommandPatternMain();
         }
-
-
     }
 }
