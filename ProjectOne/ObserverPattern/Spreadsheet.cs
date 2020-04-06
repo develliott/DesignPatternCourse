@@ -7,9 +7,9 @@ namespace ProjectOne.ObserverPattern
 {
     public class Spreadsheet : IObserver
     {
-        public void Update()
+        public void Update(int value)
         {
-            Console.WriteLine("Spreadsheet was updated.");
+            Console.WriteLine($"Spreadsheet was updated. New Value: {value}");
 
         }
     }

@@ -14,7 +14,7 @@ namespace ProjectOne.ObserverPattern
             {
                 if (value == _value) return;
                 _value = value;
-                NotifyObservers();
+                NotifyObservers(value);
             }
         }
 

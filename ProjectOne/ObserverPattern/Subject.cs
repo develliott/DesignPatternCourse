@@ -10,6 +10,6 @@ namespace ProjectOne.ObserverPattern
         public void AddObserver(IObserver observer) => _observers.Add(observer);
         public void RemoveObserver(IObserver observer) => _observers.Remove(observer);
 
-        public void NotifyObservers() => _observers.ForEach(observer => observer.Update());
+        public void NotifyObservers(int value) => _observers.ForEach(observer => observer.Update(value));
     }
 }

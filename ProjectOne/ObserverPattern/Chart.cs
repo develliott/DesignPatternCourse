@@ -7,9 +7,9 @@ namespace ProjectOne.ObserverPattern
 {
     public class Chart : IObserver
     {
-        public void Update()
+        public void Update(int value)
         {
-            Console.WriteLine("Chart was updated.");
+            Console.WriteLine($"Chart was updated. New Value: {value}");
         }
     }
 }
