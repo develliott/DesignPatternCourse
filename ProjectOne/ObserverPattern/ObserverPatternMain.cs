@@ -9,13 +9,15 @@ namespace ProjectOne.ObserverPattern
         public ObserverPatternMain()
         {
             var data = new DataSource();
-            var spreadsheet = new Spreadsheet();
-            var chart = new Chart();
+            var spreadsheet = new Spreadsheet(data);
+            var chart = new Chart(data);
 
             data.AddObserver(spreadsheet);
             data.AddObserver(chart);
 
             data.Value = 12;
+            data.Value = 15;
+
         }
     }
 }

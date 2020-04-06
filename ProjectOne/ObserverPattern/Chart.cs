@@ -7,9 +7,16 @@ namespace ProjectOne.ObserverPattern
 {
     public class Chart : IObserver
     {
-        public void Update(int value)
+        private DataSource _dataSource;
+
+        public Chart(DataSource dataSource)
         {
-            Console.WriteLine($"Chart was updated. New Value: {value}");
+            _dataSource = dataSource;
+        }
+
+        public void Update()
+        {
+            Console.WriteLine($"Chart was updated. New Value: {_dataSource.Value}");
         }
     }
 }

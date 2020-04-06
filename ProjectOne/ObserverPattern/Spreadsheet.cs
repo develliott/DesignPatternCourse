@@ -7,9 +7,16 @@ namespace ProjectOne.ObserverPattern
 {
     public class Spreadsheet : IObserver
     {
-        public void Update(int value)
+        private DataSource _dataSource;
+
+        public Spreadsheet(DataSource dataSource)
         {
-            Console.WriteLine($"Spreadsheet was updated. New Value: {value}");
+            _dataSource = dataSource;
+        }
+
+        public void Update()
+        {
+            Console.WriteLine($"Spreadsheet was updated. New Value: {_dataSource.Value}");
 
         }
     }
