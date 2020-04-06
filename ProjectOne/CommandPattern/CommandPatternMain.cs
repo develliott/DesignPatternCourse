@@ -1,20 +1,30 @@
-﻿using ProjectOne.CommandPattern.Commands;
+﻿using System;
+using ProjectOne.CommandPattern.Commands;
 using ProjectOne.CommandPattern.Core;
+using ProjectOne.CommandPattern.Editor;
 
 namespace ProjectOne.CommandPattern
 {
     public class CommandPatternMain
     {
-        private readonly ICommand _consoleLogCommand = new ConsoleLogCommand();
-        private readonly ICommand _consoleLogCommand2 = new ConsoleLogCommand("This is a brand new message.");
+        private readonly History _history = new History();
+        private readonly HtmlDocument _htmlDocument = new HtmlDocument();
 
         public CommandPatternMain()
         {
-            Button button = new Button(_consoleLogCommand);
-            button.ClickHandler();
+            var boldCommand = new BoldCommand(_htmlDocument, _history);
+            var undoCommand = new UndoCommand(_history);
 
-            Button button2 = new Button(_consoleLogCommand2);
-            button2.ClickHandler();
+            _htmlDocument.Content = "Hello World!";
+
+            Console.WriteLine(_htmlDocument.Content);
+
+
+            boldCommand.Execute();
+            Console.WriteLine(_htmlDocument.Content);
+
+            undoCommand.Execute();
+            Console.WriteLine(_htmlDocument.Content);
         }
     }
 }
