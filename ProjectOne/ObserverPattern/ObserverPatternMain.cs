@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ProjectOne.ObserverPattern.StockCode;
 
 namespace ProjectOne.ObserverPattern
 {
@@ -8,16 +9,24 @@ namespace ProjectOne.ObserverPattern
     {
         public ObserverPatternMain()
         {
-            var data = new DataSource();
-            var spreadsheet = new Spreadsheet(data);
-            var chart = new Chart(data);
+            // Stocks
+            Stock stock1 = new Stock("EMR", 1);
+            Stock stock2 = new Stock("SHS", 3);
+            Stock stock3 = new Stock("JSK", 7);
 
-            data.AddObserver(spreadsheet);
-            data.AddObserver(chart);
+            // Presentation Layers
+            var statusBar = new StatusBar();
+            var stockListView = new StockListView();
 
-            data.Value = 12;
-            data.Value = 15;
 
+            statusBar.AddStock(stock1);
+            stockListView.AddStock(stock1);
+            stockListView.AddStock(stock2);
+            stockListView.AddStock(stock3);
+
+
+            // stock1.Price = 10;
+            stock2.Price = 12;
         }
     }
 }
