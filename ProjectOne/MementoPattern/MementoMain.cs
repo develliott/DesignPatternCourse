@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ProjectOne.Memento
+namespace ProjectOne.MementoPattern
 {
     public class MementoMain
     {

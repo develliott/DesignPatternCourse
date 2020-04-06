@@ -1,4 +1,4 @@
-﻿namespace ProjectOne.State_Pattern
+﻿namespace ProjectOne.StatePattern
 {
     public enum ToolType
     {
