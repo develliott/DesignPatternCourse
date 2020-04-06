@@ -14,12 +14,10 @@ namespace ProjectOne.MediatorPattern.UI
             set
             {
                 _content = value;
-                _owner.Changed(this);
+                NotifyObservers();
             }
         }
 
-        public TextBox(DialogBox owner) : base(owner)
-        {
-        }
+
     }
 }

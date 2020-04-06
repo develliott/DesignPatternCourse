@@ -14,12 +14,8 @@ namespace ProjectOne.MediatorPattern.UI
             set
             {
                 _selection = value;
-                _owner.Changed(this);
+                NotifyObservers();
             }
-        }
-
-        public ListBox(DialogBox owner) : base(owner)
-        {
         }
     }
 }

@@ -14,12 +14,8 @@ namespace ProjectOne.MediatorPattern.UI
             set
             {
                 _isEnabled = value;
-                _owner.Changed(this);
+                NotifyObservers();
             }
-        }
-
-        public Button(DialogBox owner) : base(owner)
-        {
         }
     }
 }

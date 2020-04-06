@@ -4,29 +4,20 @@ using System.Text;
 
 namespace ProjectOne.MediatorPattern.UI
 {
-    class ArticlesDialogBox : DialogBox
+    class ArticlesDialogBox
     {
-        private ListBox _articlesListBox;
-        private TextBox _titleTextBox;
-        private Button _saveButton;
+        private readonly ListBox _articlesListBox;
+        private readonly TextBox _titleTextBox;
+        private readonly Button _saveButton;
 
         public ArticlesDialogBox()
         {
-            _articlesListBox = new ListBox(this);
-            _titleTextBox = new TextBox(this);
-            _saveButton = new Button(this);
-        }
+            _articlesListBox = new ListBox();
+            _titleTextBox = new TextBox();
+            _saveButton = new Button();
 
-        public override void Changed(UIControl control)
-        {
-            if (control == _articlesListBox)
-            {
-                ArticleSelected();
-            }
-            else if (control == _titleTextBox)
-            {
-                TitleChanged();
-            }
+            _articlesListBox.Attach(ArticleSelected);
+            _titleTextBox.Attach(TitleChanged);
         }
 
         private void TitleChanged()
@@ -46,8 +37,10 @@ namespace ProjectOne.MediatorPattern.UI
         {
             _articlesListBox.Selection = "Article 1";
             _articlesListBox.Selection = "";
+            // _articlesListBox.Selection = "Article 2";
             Console.WriteLine($"TextBox: {_titleTextBox.Content}");
             Console.WriteLine($"Button: {_saveButton.IsEnabled}");
         }
+
     }
 }

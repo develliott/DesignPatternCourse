@@ -4,13 +4,19 @@ using System.Text;
 
 namespace ProjectOne.MediatorPattern.UI
 {
-    public class UIControl
+    public abstract class UIControl
     {
-        protected DialogBox _owner;
 
-        public UIControl(DialogBox owner)
+        private List<Action> _observers = new List<Action>();
+
+        public void Attach(Action observer)
         {
-            this._owner = owner;
+            _observers.Add(observer);
+        }
+
+        protected void NotifyObservers()
+        {
+            _observers.ForEach(observer => observer.Invoke());
         }
     }
 }
