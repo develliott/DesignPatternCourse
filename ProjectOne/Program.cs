@@ -1,4 +1,4 @@
-﻿using ProjectOne.ChainOfResponsibility;
+﻿using ProjectOne.VisitorPattern;
 
 namespace ProjectOne
 {
@@ -6,7 +6,7 @@ namespace ProjectOne
     {
         static void Main(string[] args)
         {
-            new ChainOfResponsibilityMain();
+            new VisitorPatternMain();
         }
     }
 }
