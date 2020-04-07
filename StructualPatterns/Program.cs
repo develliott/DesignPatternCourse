@@ -1,4 +1,4 @@
-﻿using StructuralPatterns.CompositePattern;
+﻿using StructuralPatterns.AdapterPattern;
 
 namespace StructuralPatterns
 {
@@ -6,7 +6,7 @@ namespace StructuralPatterns
     {
         static void Main(string[] args)
         {
-            new CompositePatternMain();
+            new AdapterPatternMain();
         }
     }
 }
