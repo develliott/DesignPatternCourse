@@ -13,7 +13,7 @@ namespace StructuralPatterns.DecoratorPattern.CodeProblem.Decorators
 
         public string Render()
         {
-            return $"{_artefact.Render()} Main";
+            return $"{_artefact.Render()} [Main]";
         }
     }
 }
