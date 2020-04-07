@@ -1,4 +1,4 @@
-﻿using ProjectOne.MediatorPattern;
+﻿using ProjectOne.ChainOfResponsibility;
 
 namespace ProjectOne
 {
@@ -6,7 +6,7 @@ namespace ProjectOne
     {
         static void Main(string[] args)
         {
-            new MediatorPatternMain();
+            new ChainOfResponsibilityMain();
         }
     }
 }
