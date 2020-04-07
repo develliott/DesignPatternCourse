@@ -11,9 +11,9 @@ namespace ProjectOne.VisitorPattern
             _htmlNodes.Add(node);
         }
 
-        public void Highlight()
+        public void Execute(IOperation operation)
         {
-            _htmlNodes.ForEach(htmlNode => htmlNode.Highlight());
+            _htmlNodes.ForEach(htmlNode => htmlNode.execute(operation));
         }
     }
 }

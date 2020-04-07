@@ -2,6 +2,6 @@
 {
     public interface IHtmlNode
     {
-        void Highlight();
+        void execute(IOperation operation);
     }
 }

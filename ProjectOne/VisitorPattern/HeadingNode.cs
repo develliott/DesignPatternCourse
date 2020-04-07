@@ -4,9 +4,10 @@ namespace ProjectOne.VisitorPattern
 {
     public class HeadingNode : IHtmlNode
     {
-        public void Highlight()
+
+        public void execute(IOperation operation)
         {
-            Console.WriteLine("Highlight Heading");
+            operation.apply(this);
         }
     }
 }

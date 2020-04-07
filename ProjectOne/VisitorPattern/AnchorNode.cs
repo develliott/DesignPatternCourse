@@ -4,9 +4,10 @@ namespace ProjectOne.VisitorPattern
 {
     public class AnchorNode : IHtmlNode
     {
-        public void Highlight()
+
+        public void execute(IOperation operation)
         {
-            Console.WriteLine("Highlight Anchor");
+            operation.apply(this);
         }
     }
 }
