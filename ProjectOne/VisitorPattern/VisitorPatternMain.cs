@@ -8,6 +8,7 @@
             document.AddNode(new HeadingNode());
             document.AddNode(new AnchorNode());
 
+            document.Execute(new PlainTextOperation());
             document.Execute(new HighlightOperation());
         }
     }
