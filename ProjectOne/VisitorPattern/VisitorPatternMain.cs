@@ -16,7 +16,7 @@ namespace ProjectOne.VisitorPattern
             var wav = WavFile.Read("");
 
             wav.ApplyFilter(new ReduceNoiseFilterOperation());
-            wav.ApplyFilter(new NormaliseFilterOperation());
+            wav.ApplyFilter(new PitchShiftFilterOperation());
         }
     }
 }
