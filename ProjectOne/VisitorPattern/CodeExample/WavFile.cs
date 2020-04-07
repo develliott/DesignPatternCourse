@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using ProjectOne.VisitorPattern.CodeExample.Core;
 
 namespace ProjectOne.VisitorPattern.CodeExample
 {
     public class WavFile
     {
-        private readonly List<Segment> _segments = new List<Segment>();
+        private readonly List<ISegment> _segments = new List<ISegment>();
 
         public static WavFile Read(string fileName)
         {
@@ -18,20 +19,9 @@ namespace ProjectOne.VisitorPattern.CodeExample
             return wavFile;
         }
 
-        public void ReduceNoise()
+        public void ApplyFilter(IFilterOperation filterOperation)
         {
-            _segments.ForEach(segment => segment.ReduceNoise());
-        }
-
-        public void AddReverb()
-        {
-            _segments.ForEach(segment => segment.AddReverb());
-
-        }
-
-        public void Normalize()
-        {
-            _segments.ForEach(segment => segment.Normalize());
+            _segments.ForEach(segment => segment.ApplyFilter(filterOperation));
 
         }
     }

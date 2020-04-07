@@ -13,8 +13,10 @@ namespace ProjectOne.VisitorPattern
             // document.Execute(new PlainTextOperation());
             // document.Execute(new HighlightOperation());
 
-            WavFile.Read("");
+            var wav = WavFile.Read("");
 
+            wav.ApplyFilter(new ReduceNoiseFilterOperation());
+            wav.ApplyFilter(new NormaliseFilterOperation());
         }
     }
 }
