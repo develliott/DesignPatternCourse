@@ -10,10 +10,15 @@ namespace StructuralPatterns.DecoratorPattern.CodeProblem
         public void OpenProject(string path)
         {
             IArtefact[] artefacts = {
-                new MainDecorator( new Artefact("Main")),
+                new Artefact("Main"),
                 new Artefact("Demo"),
-                new ErrorDecorator(new Artefact("EmailClient")),
-                new UncommittedDecorator(new Artefact("EmailProvider"))};
+                new Artefact("EmailClient"),
+                new Artefact("EmailProvider")};
+
+            artefacts[0] = new MainDecorator(artefacts[0]);
+            artefacts[2] = new ErrorDecorator(artefacts[2]);
+            artefacts[3] = new ErrorDecorator(new UncommittedDecorator(artefacts[3]));
+
             foreach (var artefact in artefacts)
             {
                 Console.WriteLine(artefact.Render());
