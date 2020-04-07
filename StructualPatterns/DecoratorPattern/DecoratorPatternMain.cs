@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using StructuralPatterns.DecoratorPattern.CodeProblem;
 using StructuralPatterns.DecoratorPattern.Core;
 
 namespace StructuralPatterns.DecoratorPattern
@@ -7,12 +8,8 @@ namespace StructuralPatterns.DecoratorPattern
     {
         public DecoratorPatternMain()
         {
-            StoreCreditCare(new EncryptedCloudStream(new CompressedCloudStream(new CloudStream())));
+            Demo.Show();
         }
 
-        public void StoreCreditCare(IStream stream)
-        {
-            stream.Write("1234-1234-1234-1234");
-        }
     }
 }
