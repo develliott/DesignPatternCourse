@@ -9,7 +9,9 @@ namespace StructuralPatterns.AdapterPattern
         {
             var imageView = new ImageView(new Image());
 
-            imageView.Apply(new CaramelFilter());
+
+            imageView.Apply(new CaramelAdapter());
+            // However, composition is more flexible than inheritance.
         }
     }
 }
