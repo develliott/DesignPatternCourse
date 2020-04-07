@@ -1,10 +1,11 @@
 ﻿using System;
+using StructuralPatterns.DecoratorPattern.Core;
 
 namespace StructuralPatterns.DecoratorPattern
 {
-    public class CloudStream
+    public class CloudStream : IStream
     {
-        public virtual void Write(string data)
+        public void Write(string data)
         {
             Console.WriteLine($"Storing {data}");
         }

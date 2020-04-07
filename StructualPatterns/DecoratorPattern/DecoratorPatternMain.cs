@@ -1,15 +1,18 @@
-﻿namespace StructuralPatterns.DecoratorPattern
+﻿using System.IO;
+using StructuralPatterns.DecoratorPattern.Core;
+
+namespace StructuralPatterns.DecoratorPattern
 {
     public class DecoratorPatternMain
     {
         public DecoratorPatternMain()
         {
-            var cloudStream = new CompressedCloudStream();
+            StoreCreditCare(new EncryptedCloudStream(new CompressedCloudStream(new CloudStream())));
+        }
 
-            cloudStream.Write("Here's some data.");
-
-            // Every time we want new functionality, we have to create new classes to combine them.
-            // This is a problem.
+        public void StoreCreditCare(IStream stream)
+        {
+            stream.Write("1234-1234-1234-1234");
         }
     }
 }

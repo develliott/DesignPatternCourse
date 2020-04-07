@@ -1,11 +1,20 @@
-﻿namespace StructuralPatterns.DecoratorPattern
+﻿using StructuralPatterns.DecoratorPattern.Core;
+
+namespace StructuralPatterns.DecoratorPattern
 {
-    public class EncryptedCloudStream : CloudStream
+    public class EncryptedCloudStream : IStream
     {
-        public override void Write(string data)
+        private readonly IStream _cloudStream;
+
+        public EncryptedCloudStream(IStream cloudStream)
+        {
+            _cloudStream = cloudStream;
+        }
+
+        public void Write(string data)
         {
             string encryptedData = Encrypt(data);
-            base.Write(encryptedData);
+            _cloudStream.Write(encryptedData);
         }
 
         private string Encrypt(string data)
