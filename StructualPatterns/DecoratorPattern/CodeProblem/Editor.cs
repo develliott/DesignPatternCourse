@@ -1,4 +1,6 @@
 ﻿using System;
+using StructuralPatterns.DecoratorPattern.CodeProblem.Core;
+using StructuralPatterns.DecoratorPattern.CodeProblem.Decorators;
 
 namespace StructuralPatterns.DecoratorPattern.CodeProblem
 {
@@ -7,18 +9,15 @@ namespace StructuralPatterns.DecoratorPattern.CodeProblem
 
         public void OpenProject(string path)
         {
-            Artefact[] artefacts = {
-                new Artefact("Main"),
+            IArtefact[] artefacts = {
+                new MainDecorator( new Artefact("Main")),
                 new Artefact("Demo"),
-                new Artefact("EmailClient"),
+                new ErrorDecorator(new Artefact("EmailClient")),
                 new Artefact("EmailProvider")};
-            artefacts[0].SetMain(true);
-            artefacts[2].SetHasError(true);
             foreach (var artefact in artefacts)
             {
                 Console.WriteLine(artefact.Render());
             }
-
         }
     }
 }
