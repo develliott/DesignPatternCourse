@@ -2,7 +2,7 @@
 
 namespace StructuralPatterns.AdapterPattern.ThirdPartyFilters
 {
-    public class CaramelFilter
+    public class Caramel
     {
         public void Init()
         {
