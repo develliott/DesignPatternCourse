@@ -13,7 +13,7 @@ namespace StructuralPatterns.DecoratorPattern.CodeProblem
                 new MainDecorator( new Artefact("Main")),
                 new Artefact("Demo"),
                 new ErrorDecorator(new Artefact("EmailClient")),
-                new Artefact("EmailProvider")};
+                new UncommittedDecorator(new Artefact("EmailProvider"))};
             foreach (var artefact in artefacts)
             {
                 Console.WriteLine(artefact.Render());
